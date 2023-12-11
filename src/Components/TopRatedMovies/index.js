@@ -129,10 +129,7 @@ const TopRatedMovies = () => {
   return (
     <div className="populars-container">
       <h2 className="popular-movies-heading">Popular Movies</h2>
-      {/* {renderTopRatedMovies()} */}
-      {apiStatusConstants.success === apiStatus && renderVideosView()}
-      {apiStatusConstants.failure === apiStatus && renderFailureView()}
-      {apiStatusConstants.inProgress === apiStatus && renderLoadingView()}
+      {renderTopRatedMovies()}
     </div>
   )
 }

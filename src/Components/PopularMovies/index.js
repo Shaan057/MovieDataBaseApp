@@ -130,10 +130,7 @@ const PopularMovies = () => {
   return (
     <div className="populars-container">
       <h2 className="popular-movies-heading">Popular</h2>
-      {/* {renderPopularMovies()} */}
-      {apiStatusConstants.success === apiStatus && renderVideosView()}
-      {apiStatusConstants.failure === apiStatus && renderFailureView()}
-      {apiStatusConstants.inProgress === apiStatus && renderLoadingView()}
+      {renderPopularMovies()}
     </div>
   )
 }

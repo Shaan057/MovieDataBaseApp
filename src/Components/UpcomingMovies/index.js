@@ -114,7 +114,6 @@ const UpcomingMovies = () => {
   )
 
   const renderPopularMovies = () => {
-    console.log(apiStatus)
     switch (apiStatus) {
       case apiStatusConstants.success:
         return renderVideosView()
@@ -130,9 +129,7 @@ const UpcomingMovies = () => {
   return (
     <div className="populars-container">
       <h2 className="popular-movies-heading">Upcoming Movies</h2>
-      {apiStatusConstants.success === apiStatus && renderVideosView()}
-      {apiStatusConstants.failure === apiStatus && renderFailureView()}
-      {apiStatusConstants.inProgress === apiStatus && renderLoadingView()}
+      {renderPopularMovies()}
     </div>
   )
 }
