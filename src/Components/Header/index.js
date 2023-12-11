@@ -54,16 +54,16 @@ const Header = props => {
           onKeyDown={onKeyDownInput}
           onChange={onChangeInput}
         />
-        <Link className="header-search-link" to={`/search/${searchInput}`}>
-          <button
-            className="nav-bar-search-button"
-            type="button"
-            onClick={onSearchButtonClicked}
-          >
-            {/* <HiOutlineSearch className="nav-bar-search-icon" /> */}
-            Search
-          </button>
-        </Link>
+        {/* <Link className="header-search-link" to={`/search/${searchInput}`}> */}
+        <button
+          className="nav-bar-search-button"
+          type="button"
+          onClick={onSearchButtonClicked}
+        >
+          {/* <HiOutlineSearch className="nav-bar-search-icon" /> */}
+          Search
+        </button>
+        {/* </Link> */}
       </div>
     </nav>
   )
