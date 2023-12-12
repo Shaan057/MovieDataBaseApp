@@ -1,0 +1,103 @@
+.populars-container {
+  height: 90vh;
+  background-color: #1c1a1a;
+  overflow-y: auto;
+  color: white;
+}
+
+.loader-container {
+  min-height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 5p;
+}
+
+.popular-movies-heading {
+  margin-top: 0;
+  margin-bottom: 5px;
+  color: white;
+}
+
+.popular-movies-list {
+  min-height: 85vh;
+  list-style: none;
+  padding: 0px 5px;
+  margin: 0px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+@media screen and (min-width: 425px) {
+  .popular-movies-list {
+    flex-direction: row;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .populars-container {
+    padding: 0px 80px;
+  }
+}
+
+.pagination-button-container {
+  color: white;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.pagination-button {
+  cursor: pointer;
+  /* border: 1px solid white; */
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: white;
+  height: 25px;
+  width: 25px;
+}
+.pagination-button:hover {
+  scale: 1.1;
+  color: red;
+}
+
+.left-button {
+  border-radius: 5px 0px 0px 5px;
+}
+
+.right-button {
+  border-radius: 0px 5px 5px 0px;
+}
+.arrow {
+  margin-top: 3px;
+}
+
+.failure-view-bg {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1c1a1a;
+}
+.failure-section {
+  text-align: center;
+  align-self: center;
+}
+.failure-image {
+}
+.failure-heading {
+  color: gray;
+}
+
+.failure-view-button {
+  cursor: pointer;
+  background-color: gray;
+  padding: 5px;
+  color: white;
+  border: none;
+  outline: none;
+}
