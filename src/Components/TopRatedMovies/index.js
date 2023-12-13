@@ -129,10 +129,12 @@ const TopRatedMovies = () => {
   }
 
   return (
-    <div className="populars-container">
-      <h2 className="popular-movies-heading">Popular Movies</h2>
-      {renderTopRatedMovies()}
-    </div>
+    <>
+      <div className="populars-container">
+        <h2 className="popular-movies-heading">Popular Movies</h2>
+        {renderTopRatedMovies()}
+      </div>
+    </>
   )
 }
 

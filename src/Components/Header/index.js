@@ -7,18 +7,20 @@ import Context from '../../Context'
 const Header = props => {
   const {history} = props
   const context = useContext(Context)
-  const {searchInput, updateSearchInput} = context
+  const {searchInput, updateSearchInput, onSearchButtonOREnterPressed} = context
 
   const onSearchButtonClicked = () => {
     if (searchInput !== '') {
+      onSearchButtonOREnterPressed()
       //   updateSearchInput(searchInput)
-      history.push(`/search/${searchInput}`)
+      history.push('/search')
     }
   }
   const onKeyDownInput = event => {
     if (event.key === 'Enter' && searchInput !== '') {
+      onSearchButtonOREnterPressed()
       //   updateSearchInput(event.target.value)
-      history.push(`/search/${searchInput}`)
+      history.push('/search')
     }
   }
   const onChangeInput = event => {

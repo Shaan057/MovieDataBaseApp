@@ -15,6 +15,11 @@
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-loader-spinner": "4.0.0",
+    "react-router-dom": "5.3.0",
+    "js-cookie": "3.0.5",
+    "react": "17.0.1",
+    "react-dom": "17.0.1",
+    "react-loader-spinner": "4.0.0",
     "react-router-dom": "5.3.0"
   },
   "devDependencies": {

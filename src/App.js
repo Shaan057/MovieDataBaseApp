@@ -9,11 +9,11 @@ import TopRatedMoviesPage from './Components/TopRatedMovies'
 import UpcomingMovies from './Components/UpcomingMovies'
 import MovieDetails from './Components/MovieDetails'
 import SearchedMoviesPage from './Components/SearchedMoviesPage'
-import ProtectedRoute from './Components/ProtectedRoute'
+// import ProtectedRoute from './Components/ProtectedRoute'
 import Context from './Context'
 
 class App extends Component {
-  state = {searchInput: ''}
+  state = {searchInput: '', searchedInput: ''}
 
   updateSearchInput = value => {
     this.setState({
@@ -21,13 +21,22 @@ class App extends Component {
     })
   }
 
-  render() {
+  onSearchButtonOREnterPressed = () => {
     const {searchInput} = this.state
+    this.setState({
+      searchedInput: searchInput,
+    })
+  }
+
+  render() {
+    const {searchInput, searchedInput} = this.state
     return (
       <Context.Provider
         value={{
           searchInput,
           updateSearchInput: this.updateSearchInput,
+          searchedInput,
+          onSearchButtonOREnterPressed: this.onSearchButtonOREnterPressed,
         }}
       >
         <Header />
@@ -36,7 +45,7 @@ class App extends Component {
           <Route exact path="/top-rated" component={TopRatedMoviesPage} />
           <Route exact path="/upcoming" component={UpcomingMovies} />
           <Route exact path="/movie/:id" component={MovieDetails} />
-          <Route exact path="/search/:query" component={SearchedMoviesPage} />
+          <Route exact path="/search" component={SearchedMoviesPage} />
         </Switch>
       </Context.Provider>
     )

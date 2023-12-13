@@ -1,9 +1,10 @@
 import './index.css'
-import {useState, useEffect} from 'react'
+import {useState, useEffect, useContext} from 'react'
 // import {v4 as uuidv4} from 'uuid'
 import Loader from 'react-loader-spinner'
 // import {AiOutlineDoubleLeft, AiOutlineDoubleRight} from 'react-icons/ai'
 import SearchedMoviesListItem from '../SearchMovieListItem'
+import Context from '../../Context'
 
 const apiStatusConstants = {
   initial: 'INITIAL',
@@ -12,13 +13,12 @@ const apiStatusConstants = {
   inProgress: 'IN_PROGRESS',
 }
 
-const SearchedMoviesPage = props => {
-  const {match} = props
-  const {params} = match
-  const {query} = params
+const SearchedMoviesPage = () => {
+  const context = useContext(Context)
   const [searchMovieList, updateSearchMovieList] = useState([])
   const [apiStatus, updateApiStatus] = useState(apiStatusConstants.initial)
   const [pages, setPages] = useState(1)
+  const {searchedInput} = context
 
   const onNextPageButtonClicked = () => {
     setPages(prev => prev + 1)
@@ -50,7 +50,7 @@ const SearchedMoviesPage = props => {
   useEffect(() => {
     const fetchData = async () => {
       updateApiStatus(apiStatusConstants.inProgress)
-      const url = `https://api.themoviedb.org/3/search/movie?api_key=4ded5f0e0d0987b2667ec36b01b00ea0&language=en-US&query=${query}&page=${pages}`
+      const url = `https://api.themoviedb.org/3/search/movie?api_key=4ded5f0e0d0987b2667ec36b01b00ea0&language=en-US&query=${searchedInput}&page=${pages}`
       const response = await fetch(url)
       if (response.ok) {
         const responseData = await response.json()
@@ -65,7 +65,7 @@ const SearchedMoviesPage = props => {
       }
     }
     fetchData()
-  }, [pages, query])
+  }, [pages, searchedInput])
   const renderLoadingView = () => (
     <div className="loader-container">
       <Loader type="BallTriangle" color="white" height="50" width="50" />
@@ -85,7 +85,6 @@ const SearchedMoviesPage = props => {
           type="button"
           onClick={onPreviousPageButtonClicked}
         >
-          {/* <AiOutlineDoubleLeft className="arrow" /> */}
           &lt;
         </button>
         <p>{pages}</p>
@@ -94,7 +93,6 @@ const SearchedMoviesPage = props => {
           type="button"
           onClick={onNextPageButtonClicked}
         >
-          {/* <AiOutlineDoubleRight className="arrow" /> */}
           &gt;
         </button>
       </div>
@@ -147,12 +145,14 @@ const SearchedMoviesPage = props => {
   }
 
   return (
-    <div className="populars-container">
-      <h2 className="popular-movies-heading">Searched Movies</h2>
-      {searchMovieList.length === 0
-        ? renderNotFoundView()
-        : renderTopRatedMovies()}
-    </div>
+    <>
+      <div className="populars-container">
+        <h2 className="popular-movies-heading">Searched Movies</h2>
+        {searchMovieList.length === 0
+          ? renderNotFoundView()
+          : renderTopRatedMovies()}
+      </div>
+    </>
   )
 }
 
