@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom'
 const SearchedMovieListItem = props => {
   const {data} = props
   const {posterPath, id, title, voteAverage} = data
-  const imgUrl = `http://image.tmdb.org/t/p/w342${posterPath}`
+  const imgUrl = `http://image.tmdb.org/t/p/w500${posterPath}`
   //   const imgUrl = posterPath
   //     ? `http://image.tmdb.org/t/p/w342${posterPath}`
   //     : 'http://res.cloudinary.com/dx8csuvrh/image/upload/c_scale,h_513,w_342/v1702224898/samples/ecommerce/HD-wallpaper-pitch-black-dark-phone-plain-solid-thumbnail_brq6us.jpg'

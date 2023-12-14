@@ -34,14 +34,22 @@ const Header = props => {
       <ul className="nav-bar-navs">
         <li className="nav-bar-items">
           <Link className="nav-bar-link" to="/top-rated">
-            <button className="nav-bar-buttons" type="button">
+            <button
+              className="nav-bar-buttons"
+              onClick={() => updateSearchInput('')}
+              type="button"
+            >
               Top Rated
             </button>
           </Link>
         </li>
         <li className="nav-bar-items">
           <Link className="nav-bar-link" to="/upcoming">
-            <button className="nav-bar-buttons" type="button">
+            <button
+              className="nav-bar-buttons"
+              onClick={() => updateSearchInput('')}
+              type="button"
+            >
               Upcoming
             </button>
           </Link>
@@ -50,9 +58,9 @@ const Header = props => {
       <div className="nav-bar-search-container">
         <input
           value={searchInput}
-          placeholder="Search"
+          placeholder="search"
           className="nav-bar-search"
-          type="search"
+          type="text"
           onKeyDown={onKeyDownInput}
           onChange={onChangeInput}
         />

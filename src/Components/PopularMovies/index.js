@@ -1,9 +1,10 @@
 import './index.css'
-import {useState, useEffect} from 'react'
+import {useState, useEffect, useContext} from 'react'
 // import {v4 as uuidv4} from 'uuid'
 import Loader from 'react-loader-spinner'
 // import {AiOutlineDoubleLeft, AiOutlineDoubleRight} from 'react-icons/ai'
 import PopularMoviesListItem from '../PopularMoviesListItem'
+import Context from '../../Context'
 
 const apiStatusConstants = {
   initial: 'INITIAL',
@@ -13,6 +14,8 @@ const apiStatusConstants = {
 }
 
 const PopularMovies = () => {
+  const context = useContext(Context)
+  const {updateSearchInput} = context
   const [popularMoviesList, updatePopularMoviesList] = useState(null)
   const [apiStatus, updateApiStatus] = useState(apiStatusConstants.initial)
   const [pages, setPages] = useState(1)
@@ -61,6 +64,7 @@ const PopularMovies = () => {
       }
     }
     fetchData()
+    updateSearchInput('')
   }, [pages])
   //   console.log(popularMoviesList)
   //   console.log(apiStatus)
