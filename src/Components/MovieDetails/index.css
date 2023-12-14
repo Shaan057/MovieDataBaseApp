@@ -16,9 +16,8 @@
 
 .movie-info-container {
   background-color: rgba(0, 0, 0, 0.7);
-  width: 100%;
-  height: 100%;
   color: white;
+  padding: 10px;
 }
 @media screen and (min-width: 768px) {
   .movie-info-container {
@@ -27,7 +26,7 @@
 }
 
 .movie-details-movie-poster {
-  margin: 10px;
+  align-self: center;
   border-radius: 10px;
 }
 .movie-details-container {
@@ -35,22 +34,26 @@
   flex-grow: 1;
 }
 .movie-details-movie-title {
-  font-size: 30px;
+  font-size: 28px;
   color: white;
 }
 @media screen and (min-width: 768px) {
   .movie-details-movie-title {
-    font-size: 30px;
+    font-size: 28px;
   }
 }
 .movie-details-ratings {
+  font-size: 18px;
 }
 
 .movie-details-genre-list {
   display: flex;
-  gap: 30px;
+  flex-wrap: wrap;
   padding-left: 15px;
   margin: 0px;
+}
+.movie-details-genre-list-item {
+  margin-right: 25px;
 }
 .movie-details-release-date {
 }

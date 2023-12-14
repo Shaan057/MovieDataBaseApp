@@ -78,7 +78,7 @@ const CastDetails = props => {
             className="movie-cast-img"
             src={
               each.profilePath
-                ? `http://image.tmdb.org/t/p/w92${each.profilePath}`
+                ? `https://image.tmdb.org/t/p/w92${each.profilePath}`
                 : 'https://res.cloudinary.com/dx8csuvrh/image/upload/v1702210221/samples/ecommerce/account_profile_user_avatar_icon_219236_g1wg1d.png'
             }
             alt={each.character}

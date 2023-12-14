@@ -106,12 +106,12 @@ const MovieDetails = props => {
     const formattedTime = `${hours}h ${minutes}m`
     const backDropUrl =
       innerWidth <= 768
-        ? `http://image.tmdb.org/t/p/w300${backdropPath}`
-        : `http://image.tmdb.org/t/p/w1280${backdropPath}`
+        ? `https://image.tmdb.org/t/p/w300${backdropPath}`
+        : `https://image.tmdb.org/t/p/w1280${backdropPath}`
     const posterUrl =
       innerWidth <= 768
-        ? `http://image.tmdb.org/t/p/w185${posterPath}`
-        : `http://image.tmdb.org/t/p/w300${posterPath}`
+        ? `https://image.tmdb.org/t/p/w185${posterPath}`
+        : `https://image.tmdb.org/t/p/w300${posterPath}`
     const style = {
       backgroundImage: `url(${backDropUrl})`,
     }
@@ -132,7 +132,7 @@ const MovieDetails = props => {
               {/* <p>Genre</p> */}
               <ul className="movie-details-genre-list">
                 {genres.map(each => (
-                  <li className="" key={each.id}>
+                  <li className="movie-details-genre-list-item" key={each.id}>
                     {each.name}
                   </li>
                 ))}
