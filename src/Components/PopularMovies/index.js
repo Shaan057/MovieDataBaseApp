@@ -17,15 +17,6 @@ const PopularMovies = () => {
   const [apiStatus, updateApiStatus] = useState(apiStatusConstants.initial)
   const [pages, setPages] = useState(1)
 
-  const onNextPageButtonClicked = () => {
-    setPages(prev => prev + 1)
-  }
-  const onPreviousPageButtonClicked = () => {
-    if (pages > 1) {
-      setPages(prev => prev - 1)
-    }
-  }
-
   const pascalCaseData = data => ({
     adult: data.adult,
     backdropPath: data.backdrop_path,
@@ -42,6 +33,15 @@ const PopularMovies = () => {
     voteAverage: data.vote_average,
     voteCount: data.vote_count,
   })
+
+  const onNextPageButtonClicked = () => {
+    setPages(prev => prev + 1)
+  }
+  const onPreviousPageButtonClicked = () => {
+    if (pages > 1) {
+      setPages(prev => prev - 1)
+    }
+  }
 
   useEffect(() => {
     const fetchData = async () => {
@@ -62,6 +62,7 @@ const PopularMovies = () => {
     }
     fetchData()
   }, [pages])
+
   //   console.log(popularMoviesList)
   //   console.log(apiStatus)
 
