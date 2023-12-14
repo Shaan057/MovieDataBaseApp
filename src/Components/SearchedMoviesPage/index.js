@@ -50,9 +50,9 @@ const SearchedMoviesPage = () => {
   useEffect(() => {
     const fetchData = async () => {
       updateApiStatus(apiStatusConstants.inProgress)
-      const url = `https://api.themoviedb.org/3/search/movie?api_key=4ded5f0e0d0987b2667ec36b01b00ea0&language=en-US&query=${searchedInput}&page=${pages}`
-      const response = await fetch(url)
-      if (response.ok) {
+      try {
+        const url = `https://api.themoviedb.org/3/search/movie?api_key=4ded5f0e0d0987b2667ec36b01b00ea0&language=en-US&query=${searchedInput}&page=${pages}`
+        const response = await fetch(url)
         const responseData = await response.json()
 
         const formattedData = responseData.results.map(each =>
@@ -60,12 +60,13 @@ const SearchedMoviesPage = () => {
         )
         updateSearchMovieList(formattedData)
         updateApiStatus(apiStatusConstants.success)
-      } else {
+      } catch (error) {
         updateApiStatus(apiStatusConstants.failure)
       }
     }
     fetchData()
   }, [pages, searchedInput])
+
   const renderLoadingView = () => (
     <div className="loader-container">
       <Loader type="BallTriangle" color="white" height="50" width="50" />
@@ -85,15 +86,15 @@ const SearchedMoviesPage = () => {
           type="button"
           onClick={onPreviousPageButtonClicked}
         >
-          &lt;
+          Prev
         </button>
-        <p>{pages}</p>
+        <p className="pagination-pages">{pages}</p>
         <button
           className="right-button pagination-button"
           type="button"
           onClick={onNextPageButtonClicked}
         >
-          &gt;
+          Next
         </button>
       </div>
     </>
@@ -104,7 +105,7 @@ const SearchedMoviesPage = () => {
       <div className="failure-section">
         <img
           className="failure-image"
-          src="https://res.cloudinary.com/dx8csuvrh/image/upload/c_scale,h_90/v1702227681/samples/ecommerce/warning_q9nakk.png"
+          src="https://res.cloudinary.com/dx8csuvrh/image/upload/v1702469161/Movies%20App/Login%20Page/alert-triangle_rxyax1.png"
           alt="failure"
         />
         <p className="failure-heading">Oops! Something Went Wrong</p>
@@ -118,15 +119,15 @@ const SearchedMoviesPage = () => {
   const renderNotFoundView = () => (
     <div className="failure-view-bg">
       <div className="failure-section">
-        <img
+        {/* <img
           className="failure-image"
-          src="https://res.cloudinary.com/dx8csuvrh/image/upload/c_scale,h_90/v1702227681/samples/ecommerce/warning_q9nakk.png"
+          src="https://res.cloudinary.com/dx8csuvrh/image/upload/v1702469161/Movies%20App/Login%20Page/alert-triangle_rxyax1.png"
           alt="failure"
-        />
+        /> */}
         <p className="failure-heading">No Movies Found</p>
-        <button className="failure-view-button" type="button">
+        {/* <button className="failure-view-button" type="button">
           Retry
-        </button>
+        </button> */}
       </div>
     </div>
   )
@@ -147,7 +148,6 @@ const SearchedMoviesPage = () => {
   return (
     <>
       <div className="populars-container">
-        <h2 className="popular-movies-heading">Searched Movies</h2>
         {searchMovieList.length === 0
           ? renderNotFoundView()
           : renderTopRatedMovies()}

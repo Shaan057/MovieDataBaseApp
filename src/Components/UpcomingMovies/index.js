@@ -25,7 +25,7 @@ const UpcomingMovies = () => {
       setPages(prev => prev - 1)
     }
   }
-
+  console.log(pages)
   const pascalCaseData = data => ({
     adult: data.adult,
     backdropPath: data.backdrop_path,
@@ -46,17 +46,17 @@ const UpcomingMovies = () => {
   useEffect(() => {
     const fetchData = async () => {
       updateApiStatus(apiStatusConstants.inProgress)
-      const url = `https://api.themoviedb.org/3/movie/upcoming?api_key=4ded5f0e0d0987b2667ec36b01b00ea0&language=en-US&page=${pages}`
+      try {
+        const url = `https://api.themoviedb.org/3/movie/upcoming?api_key=4ded5f0e0d0987b2667ec36b01b00ea0&language=en-US&page=${pages}`
 
-      const response = await fetch(url)
-      if (response.ok) {
+        const response = await fetch(url)
         const responseData = await response.json()
         const formattedData = responseData.results.map(each =>
           pascalCaseData(each),
         )
         updateUpcomingMoviesList(formattedData)
         updateApiStatus(apiStatusConstants.success)
-      } else {
+      } catch (e) {
         updateApiStatus(apiStatusConstants.failure)
       }
     }
@@ -83,17 +83,15 @@ const UpcomingMovies = () => {
           type="button"
           onClick={onPreviousPageButtonClicked}
         >
-          {/* <AiOutlineDoubleLeft className="arrow" /> */}
-          &lt;
+          Prev
         </button>
-        <p>{pages}</p>
+        <p className="pagination-pages">{pages}</p>
         <button
           className="right-button pagination-button"
           type="button"
           onClick={onNextPageButtonClicked}
         >
-          {/* <AiOutlineDoubleRight className="arrow" /> */}
-          &gt;
+          Next
         </button>
       </div>
     </>
@@ -104,7 +102,7 @@ const UpcomingMovies = () => {
       <div className="failure-section">
         <img
           className="failure-image"
-          src="https://res.cloudinary.com/dx8csuvrh/image/upload/c_scale,h_90/v1702227681/samples/ecommerce/warning_q9nakk.png"
+          src="https://res.cloudinary.com/dx8csuvrh/image/upload/v1702469161/Movies%20App/Login%20Page/alert-triangle_rxyax1.png"
           alt="failure"
         />
         <p className="failure-heading">Oops! Something Went Wrong</p>
@@ -130,7 +128,7 @@ const UpcomingMovies = () => {
 
   return (
     <div className="populars-container">
-      <h2 className="popular-movies-heading">Upcoming Movies</h2>
+      <h2 className="popular-movies-heading">Upcoming</h2>
       {renderPopularMovies()}
     </div>
   )

@@ -97,7 +97,7 @@ const CastDetails = props => {
       <div className="failure-section">
         <img
           className="failure-image"
-          src="https://res.cloudinary.com/dx8csuvrh/image/upload/c_scale,h_90/v1702227681/samples/ecommerce/warning_q9nakk.png"
+          src="https://res.cloudinary.com/dx8csuvrh/image/upload/v1702469161/Movies%20App/Login%20Page/alert-triangle_rxyax1.png"
           alt="failure"
         />
         <p className="failure-heading">Oops! Something Went Wrong</p>

@@ -83,17 +83,15 @@ const TopRatedMovies = () => {
           type="button"
           onClick={onPreviousPageButtonClicked}
         >
-          {/* <AiOutlineDoubleLeft className="arrow" /> */}
-          &lt;
+          Prev
         </button>
-        <p>{pages}</p>
+        <p className="pagination-pages">{pages}</p>
         <button
           className="right-button pagination-button"
           type="button"
           onClick={onNextPageButtonClicked}
         >
-          {/* <AiOutlineDoubleRight className="arrow" /> */}
-          &gt;
+          Next
         </button>
       </div>
     </>
@@ -104,7 +102,7 @@ const TopRatedMovies = () => {
       <div className="failure-section">
         <img
           className="failure-image"
-          src="https://res.cloudinary.com/dx8csuvrh/image/upload/c_scale,h_90/v1702227681/samples/ecommerce/warning_q9nakk.png"
+          src="https://res.cloudinary.com/dx8csuvrh/image/upload/v1702469161/Movies%20App/Login%20Page/alert-triangle_rxyax1.png"
           alt="failure"
         />
         <p className="failure-heading">Oops! Something Went Wrong</p>
@@ -131,7 +129,7 @@ const TopRatedMovies = () => {
   return (
     <>
       <div className="populars-container">
-        <h2 className="popular-movies-heading">Popular Movies</h2>
+        <h2 className="popular-movies-heading">Top Rated</h2>
         {renderTopRatedMovies()}
       </div>
     </>

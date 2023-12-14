@@ -28,7 +28,11 @@ const Header = props => {
   }
   return (
     <nav className="nav-bar">
-      <Link className="nav-bar-link" to="/">
+      <Link
+        className="nav-bar-link"
+        to="/"
+        onClick={() => updateSearchInput('')}
+      >
         <h1 className="nav-header">movieDB</h1>
       </Link>
       <ul className="nav-bar-navs">

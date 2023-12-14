@@ -1,5 +1,6 @@
 .nav-bar {
   height: 10vh;
+  padding: 0px 5px;
   background-color: black;
   color: white;
   display: flex;
@@ -17,7 +18,7 @@
     padding: 0px 80px;
   }
   .nav-header {
-    font-size: 20px;
+    font-size: 25px;
   }
 }
 
@@ -67,20 +68,24 @@
 }
 @media screen and (min-width: 321px) {
   .nav-bar-search {
-    width: 30%;
+    width: 100px;
   }
 }
 
 @media screen and (min-width: 768px) {
   .nav-bar-search {
-    width: 300px;
+    width: 250px;
+  }
+  .nav-bar-buttons {
+    font-size: 13px;
   }
 }
+
 .header-search-link {
   border-left: 1px solid grey;
 }
 .nav-bar-search-button {
-  border-left: 1px solid white;
+  border-left: 1px solid grey;
   border-top: none;
   border-right: none;
   border-bottom: none;
@@ -88,7 +93,16 @@
   outline: none;
   cursor: pointer;
   background-color: transparent;
-  font-size: 10px;
+  font-size: 8px;
 }
 .nav-bar-search-icon {
+}
+
+@media screen and (min-width: 1024px) {
+  .nav-bar-buttons {
+    font-size: 20px;
+  }
+  .nav-bar-search-button {
+    font-size: 15px;
+  }
 }

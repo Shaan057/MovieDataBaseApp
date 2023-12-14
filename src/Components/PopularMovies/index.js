@@ -1,10 +1,9 @@
 import './index.css'
-import {useState, useEffect, useContext} from 'react'
+import {useState, useEffect} from 'react'
 // import {v4 as uuidv4} from 'uuid'
 import Loader from 'react-loader-spinner'
 // import {AiOutlineDoubleLeft, AiOutlineDoubleRight} from 'react-icons/ai'
 import PopularMoviesListItem from '../PopularMoviesListItem'
-import Context from '../../Context'
 
 const apiStatusConstants = {
   initial: 'INITIAL',
@@ -14,8 +13,6 @@ const apiStatusConstants = {
 }
 
 const PopularMovies = () => {
-  const context = useContext(Context)
-  const {updateSearchInput} = context
   const [popularMoviesList, updatePopularMoviesList] = useState(null)
   const [apiStatus, updateApiStatus] = useState(apiStatusConstants.initial)
   const [pages, setPages] = useState(1)
@@ -49,9 +46,9 @@ const PopularMovies = () => {
   useEffect(() => {
     const fetchData = async () => {
       updateApiStatus(apiStatusConstants.inProgress)
-      const url = `https://api.themoviedb.org/3/movie/popular?api_key=4ded5f0e0d0987b2667ec36b01b00ea0&language=en-US&page=${pages}`
-      const response = await fetch(url)
-      if (response.ok) {
+      try {
+        const url = `https://api.themoviedb.org/3/movie/popular?api_key=4ded5f0e0d0987b2667ec36b01b00ea0&language=en-US&page=${pages}`
+        const response = await fetch(url)
         const responseData = await response.json()
 
         const formattedData = responseData.results.map(each =>
@@ -59,12 +56,11 @@ const PopularMovies = () => {
         )
         updatePopularMoviesList(formattedData)
         updateApiStatus(apiStatusConstants.success)
-      } else {
+      } catch (error) {
         updateApiStatus(apiStatusConstants.failure)
       }
     }
     fetchData()
-    updateSearchInput('')
   }, [pages])
   //   console.log(popularMoviesList)
   //   console.log(apiStatus)
@@ -88,17 +84,15 @@ const PopularMovies = () => {
           type="button"
           onClick={onPreviousPageButtonClicked}
         >
-          {/* <AiOutlineDoubleLeft className="arrow" /> */}
-          &lt;
+          Prev
         </button>
-        <p>{pages}</p>
+        <p className="pagination-pages">{pages}</p>
         <button
           className="right-button pagination-button"
           type="button"
           onClick={onNextPageButtonClicked}
         >
-          {/* <AiOutlineDoubleRight className="arrow" /> */}
-          &gt;
+          Next
         </button>
       </div>
     </>
@@ -109,7 +103,7 @@ const PopularMovies = () => {
       <div className="failure-section">
         <img
           className="failure-image"
-          src="https://res.cloudinary.com/dx8csuvrh/image/upload/c_scale,h_90/v1702227681/samples/ecommerce/warning_q9nakk.png"
+          src="https://res.cloudinary.com/dx8csuvrh/image/upload/v1702469161/Movies%20App/Login%20Page/alert-triangle_rxyax1.png"
           alt="failure"
         />
         <p className="failure-heading">Oops! Something Went Wrong</p>

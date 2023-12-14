@@ -60,24 +60,23 @@ const MovieDetails = props => {
   useEffect(() => {
     const fetchData = async () => {
       updateApiStatus(apiStatusConstants.inProgress)
-      const url = `https://api.themoviedb.org/3/movie/${id}?api_key=4ded5f0e0d0987b2667ec36b01b00ea0&language=en-US`
 
-      const response = await fetch(url)
-      if (response.ok) {
+      try {
+        const url = `https://api.themoviedb.org/3/movie/${id}?api_key=4ded5f0e0d0987b2667ec36b01b00ea0&language=en-US`
+        const response = await fetch(url)
         const responseData = await response.json()
 
         const formattedData = pascalCaseData(responseData)
 
         updateMovieDetails(formattedData)
         updateApiStatus(apiStatusConstants.success)
-      } else {
+      } catch (error) {
         updateApiStatus(apiStatusConstants.failure)
       }
     }
     fetchData()
   }, [])
-  //   console.log(movieDetails)
-  //   console.log(apiStatus)
+
   const renderLoadingView = () => (
     <div className="loader-container">
       <Loader type="BallTriangle" color="white" height="50" width="50" />
@@ -155,7 +154,7 @@ const MovieDetails = props => {
       <div className="failure-section">
         <img
           className="failure-image"
-          src="https://res.cloudinary.com/dx8csuvrh/image/upload/c_scale,h_90/v1702227681/samples/ecommerce/warning_q9nakk.png"
+          src="https://res.cloudinary.com/dx8csuvrh/image/upload/v1702469161/Movies%20App/Login%20Page/alert-triangle_rxyax1.png"
           alt="failure"
         />
         <p className="failure-heading">Oops! Something Went Wrong</p>

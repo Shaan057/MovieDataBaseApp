@@ -14,8 +14,9 @@
 }
 
 .popular-movies-heading {
-  margin-top: 0;
-  margin-bottom: 5px;
+  /* margin-top: 0;
+  margin-bottom: 5px; */
+  padding-left: 5px;
   color: white;
 }
 
@@ -45,20 +46,23 @@
 .pagination-button-container {
   color: white;
   width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 10px;
+  width: 210px;
 }
 .pagination-button {
   cursor: pointer;
-  /* border: 1px solid white; */
   border: none;
   outline: none;
   background-color: transparent;
   color: white;
   height: 25px;
-  width: 25px;
+  /* width: 25px; */
 }
 .pagination-button:hover {
   scale: 1.1;
@@ -71,6 +75,10 @@
 
 .right-button {
   border-radius: 0px 5px 5px 0px;
+}
+.pagination-pages {
+  margin: 0;
+  font-size: 13px;
 }
 .arrow {
   margin-top: 3px;
@@ -95,9 +103,9 @@
 
 .failure-view-button {
   cursor: pointer;
-  background-color: gray;
-  padding: 5px;
-  color: white;
+  background-color: white;
+  padding: 4px 10px;
+  color: black;
   border: none;
   outline: none;
 }
