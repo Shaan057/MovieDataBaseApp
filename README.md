@@ -115,4 +115,4 @@ https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=en-US&quer
 
 ### Preview
 
-### [Link](https://movie-database-dgy2frj9m-shaan057s-projects.vercel.app)
+### [Link](https://movie-data-base-shaan.vercel.app/)
