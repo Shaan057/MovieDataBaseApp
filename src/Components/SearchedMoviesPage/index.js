@@ -128,9 +128,7 @@ const SearchedMoviesPage = () => {
 
   return (
     <div className="populars-container">
-      {searchMovieList.length === 0
-        ? renderNotFoundView()
-        : renderTopRatedMovies()}
+      {renderTopRatedMovies()}
       <div className="pagination-button-container">
         <button
           className="left-button pagination-button"
