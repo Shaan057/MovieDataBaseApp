@@ -28,6 +28,8 @@
 .movie-details-movie-poster {
   align-self: center;
   border-radius: 10px;
+  max-width: 300px;
+  max-height: 450px;
 }
 .movie-details-container {
   padding: 10px 0px 10px 10px;

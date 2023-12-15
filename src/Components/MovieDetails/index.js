@@ -96,10 +96,7 @@ const MovieDetails = props => {
     } = movieDetails
     // const date = new Date(releaseDate)
     // const formattedDate = format(date, 'dd/MM/yyyy')
-    // const duration = intervalToDuration({start: 0, end: runtime * 1000})
 
-    // const zeroPad = num => String(num).padStart(2, '0')
-    // const formattedTime = `${duration.minutes}h ${zeroPad(duration.seconds)}m`
     const hours = Math.floor(runtime / 60)
     const minutes = runtime % 60
     const formattedTime = `${hours}h ${minutes}m`
@@ -121,7 +118,10 @@ const MovieDetails = props => {
           <div className="movie-info-container">
             <img
               className="movie-details-movie-poster"
-              src={posterUrl}
+              src={
+                posterUrl ||
+                'https://res.cloudinary.com/dx8csuvrh/image/upload/c_scale,h_513,w_342/v1702224898/samples/ecommerce/HD-wallpaper-pitch-black-dark-phone-plain-solid-thumbnail_brq6us.jpg'
+              }
               alt={title}
             />
             <div className="movie-details-container">

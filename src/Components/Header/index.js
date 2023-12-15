@@ -12,14 +12,12 @@ const Header = props => {
   const onSearchButtonClicked = () => {
     if (searchInput !== '') {
       onSearchButtonOREnterPressed()
-      //   updateSearchInput(searchInput)
       history.push('/search')
     }
   }
   const onKeyDownInput = event => {
     if (event.key === 'Enter' && searchInput !== '') {
       onSearchButtonOREnterPressed()
-      //   updateSearchInput(event.target.value)
       history.push('/search')
     }
   }

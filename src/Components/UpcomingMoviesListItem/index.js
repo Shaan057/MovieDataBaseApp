@@ -5,10 +5,10 @@ import {Link} from 'react-router-dom'
 const UpcomingMoviesListItem = props => {
   const {data} = props
   const {posterPath, id, title, voteAverage} = data
-  const imgUrl = `https://image.tmdb.org/t/p/w500${posterPath}`
-  //   const imgUrl = posterPath
-  //     ? `https://image.tmdb.org/t/p/w342${posterPath}`
-  //     : 'https://res.cloudinary.com/dx8csuvrh/image/upload/c_scale,h_513,w_342/v1702224898/samples/ecommerce/HD-wallpaper-pitch-black-dark-phone-plain-solid-thumbnail_brq6us.jpg'
+  //   const imgUrl = `https://image.tmdb.org/t/p/w500${posterPath}`
+  const imgUrl = posterPath
+    ? `https://image.tmdb.org/t/p/w342${posterPath}`
+    : 'https://res.cloudinary.com/dx8csuvrh/image/upload/c_scale,h_513,w_342/v1702224898/samples/ecommerce/HD-wallpaper-pitch-black-dark-phone-plain-solid-thumbnail_brq6us.jpg'
   return (
     <li className="popular-movie-item">
       <div className="popular-movie-img-container">
