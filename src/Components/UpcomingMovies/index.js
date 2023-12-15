@@ -25,7 +25,6 @@ const UpcomingMovies = () => {
       setPages(prev => prev - 1)
     }
   }
-  console.log(pages)
   const pascalCaseData = data => ({
     adult: data.adult,
     backdropPath: data.backdrop_path,
@@ -71,30 +70,11 @@ const UpcomingMovies = () => {
   )
 
   const renderVideosView = () => (
-    <>
-      <ul className="popular-movies-list">
-        {upComingMoviesList.map(each => (
-          <UpcomingMoviesListItem key={each.id} data={each} />
-        ))}
-      </ul>
-      <div className="pagination-button-container">
-        <button
-          className="left-button pagination-button"
-          type="button"
-          onClick={onPreviousPageButtonClicked}
-        >
-          Prev
-        </button>
-        <p className="pagination-pages">{pages}</p>
-        <button
-          className="right-button pagination-button"
-          type="button"
-          onClick={onNextPageButtonClicked}
-        >
-          Next
-        </button>
-      </div>
-    </>
+    <ul className="popular-movies-list">
+      {upComingMoviesList.map(each => (
+        <UpcomingMoviesListItem key={each.id} data={each} />
+      ))}
+    </ul>
   )
 
   const renderFailureView = () => (
@@ -130,6 +110,23 @@ const UpcomingMovies = () => {
     <div className="populars-container">
       <h2 className="popular-movies-heading">Upcoming</h2>
       {renderPopularMovies()}
+      <div className="pagination-button-container">
+        <button
+          className="left-button pagination-button"
+          type="button"
+          onClick={onPreviousPageButtonClicked}
+        >
+          Prev
+        </button>
+        <p className="pagination-pages">{pages}</p>
+        <button
+          className="right-button pagination-button"
+          type="button"
+          onClick={onNextPageButtonClicked}
+        >
+          Next
+        </button>
+      </div>
     </div>
   )
 }

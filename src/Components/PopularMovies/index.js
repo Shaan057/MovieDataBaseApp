@@ -73,30 +73,11 @@ const PopularMovies = () => {
   )
 
   const renderVideosView = () => (
-    <>
-      <ul className="popular-movies-list">
-        {popularMoviesList.map(each => (
-          <PopularMoviesListItem key={each.id} data={each} />
-        ))}
-      </ul>
-      <div className="pagination-button-container">
-        <button
-          className="left-button pagination-button"
-          type="button"
-          onClick={onPreviousPageButtonClicked}
-        >
-          Prev
-        </button>
-        <p className="pagination-pages">{pages}</p>
-        <button
-          className="right-button pagination-button"
-          type="button"
-          onClick={onNextPageButtonClicked}
-        >
-          Next
-        </button>
-      </div>
-    </>
+    <ul className="popular-movies-list">
+      {popularMoviesList.map(each => (
+        <PopularMoviesListItem key={each.id} data={each} />
+      ))}
+    </ul>
   )
 
   const renderFailureView = () => (
@@ -132,6 +113,23 @@ const PopularMovies = () => {
     <div className="populars-container">
       <h2 className="popular-movies-heading">Popular</h2>
       {renderPopularMovies()}
+      <div className="pagination-button-container">
+        <button
+          className="left-button pagination-button"
+          type="button"
+          onClick={onPreviousPageButtonClicked}
+        >
+          Prev
+        </button>
+        <p className="pagination-pages">{pages}</p>
+        <button
+          className="right-button pagination-button"
+          type="button"
+          onClick={onNextPageButtonClicked}
+        >
+          Next
+        </button>
+      </div>
     </div>
   )
 }

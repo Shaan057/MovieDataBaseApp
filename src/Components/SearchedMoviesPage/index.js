@@ -74,30 +74,11 @@ const SearchedMoviesPage = () => {
   )
 
   const renderVideosView = () => (
-    <>
-      <ul className="popular-movies-list">
-        {searchMovieList.map(each => (
-          <SearchedMoviesListItem key={each.id} data={each} />
-        ))}
-      </ul>
-      <div className="pagination-button-container">
-        <button
-          className="left-button pagination-button"
-          type="button"
-          onClick={onPreviousPageButtonClicked}
-        >
-          Prev
-        </button>
-        <p className="pagination-pages">{pages}</p>
-        <button
-          className="right-button pagination-button"
-          type="button"
-          onClick={onNextPageButtonClicked}
-        >
-          Next
-        </button>
-      </div>
-    </>
+    <ul className="popular-movies-list">
+      {searchMovieList.map(each => (
+        <SearchedMoviesListItem key={each.id} data={each} />
+      ))}
+    </ul>
   )
 
   const renderFailureView = () => (
@@ -146,13 +127,28 @@ const SearchedMoviesPage = () => {
   }
 
   return (
-    <>
-      <div className="populars-container">
-        {searchMovieList.length === 0
-          ? renderNotFoundView()
-          : renderTopRatedMovies()}
+    <div className="populars-container">
+      {searchMovieList.length === 0
+        ? renderNotFoundView()
+        : renderTopRatedMovies()}
+      <div className="pagination-button-container">
+        <button
+          className="left-button pagination-button"
+          type="button"
+          onClick={onPreviousPageButtonClicked}
+        >
+          Prev
+        </button>
+        <p className="pagination-pages">{pages}</p>
+        <button
+          className="right-button pagination-button"
+          type="button"
+          onClick={onNextPageButtonClicked}
+        >
+          Next
+        </button>
       </div>
-    </>
+    </div>
   )
 }
 
