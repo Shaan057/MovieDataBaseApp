@@ -35,8 +35,14 @@ const PopularMovies = () => {
   })
 
   const onNextPageButtonClicked = () => {
-    setPages(prev => prev + 1)
+    if (
+      apiStatus !== apiStatusConstants.failure &&
+      popularMoviesList !== null
+    ) {
+      setPages(prev => prev + 1)
+    }
   }
+
   const onPreviousPageButtonClicked = () => {
     if (pages > 1) {
       setPages(prev => prev - 1)

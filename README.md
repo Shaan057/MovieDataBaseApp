@@ -112,3 +112,7 @@ https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=en-US&quer
 **Note:** Make sure to replace `${API_KEY}`, `${MOVIE_ID}` and `${MOVIE_NAME}` with actual values when using these APIs.
 
 <br/>
+
+### Preview
+
+### [Link](https://movie-database-dgy2frj9m-shaan057s-projects.vercel.app)

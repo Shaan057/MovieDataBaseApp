@@ -18,7 +18,12 @@ const TopRatedMovies = () => {
   const [pages, setPages] = useState(1)
 
   const onNextPageButtonClicked = () => {
-    setPages(prev => prev + 1)
+    if (
+      apiStatus !== apiStatusConstants.failure &&
+      topRatedMoviesList !== null
+    ) {
+      setPages(prev => prev + 1)
+    }
   }
   const onPreviousPageButtonClicked = () => {
     if (pages > 1) {

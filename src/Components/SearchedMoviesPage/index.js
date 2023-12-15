@@ -21,7 +21,10 @@ const SearchedMoviesPage = () => {
   const {searchedInput} = context
 
   const onNextPageButtonClicked = () => {
-    if (searchMovieList.length !== 0) {
+    if (
+      searchMovieList.length !== 0 &&
+      apiStatus !== apiStatusConstants.failure
+    ) {
       setPages(prev => prev + 1)
     }
   }
