@@ -48,22 +48,6 @@ Develop an application based on video-on-demand websites that provides an extens
 - Users should be able to view a grid of movie posters, arranged in multiple rows and columns, fetched from the **searched movies API**.
 - Each movie poster should include an image of the movie, its name, its rating, and a `View Details` button.
 
-**Note:**
-
-- Every page should feature a global nav bar at the top.
-- Initially, users should be able to see the Popular Page (Home Page) upon accessing the website.
-- Each page corresponds to a different route.
-
-### Instructions:
-
-- Upload the project on Codesandbox (https://codesandbox.io/) and submit it using the code sandbox link. This is mandatory, without this, the submission will not be accepted.
-- The project must be responsive with decent CSS.
-- It is not necessary that the colors should match the images above. Use your imagination and try to make it as you like.
-- Pagination is required.
-- If you are a candidate with more than 6 months of experience then using Redux for state management purposes is a MUST.
-- If you are a fresher then can directly do API calls in the components themselves.
-- Make sure the components are reusable wherever possible.
-
 ### API Details:
 
 - You should generate your own `API_KEY` by visiting https://www.themoviedb.org/documentation/api
@@ -116,3 +100,11 @@ https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=en-US&quer
 ### Preview
 
 ### [Link](https://movie-data-base-shaan.vercel.app/)
+
+### Movie Home Page
+
+### ![Link](https://res.cloudinary.com/dx8csuvrh/image/upload/v1704360780/Screenshot_381_ezp7dq.png)
+
+### Movie Details View
+
+### ![Link](https://res.cloudinary.com/dx8csuvrh/image/upload/v1704360780/Screenshot_382_ealvyn.png)
