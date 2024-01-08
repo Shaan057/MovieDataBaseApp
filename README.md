@@ -1,4 +1,6 @@
-Develop an application based on video-on-demand websites that provides an extensive database of available content. It should consist of various pages and a global navbar.
+# Movie DataBase App
+
+### Routes
 
 - Popular Movies Page (Home Page)
 - Top Rated Movies Page
@@ -6,53 +8,47 @@ Develop an application based on video-on-demand websites that provides an extens
 - Single Movie Details Page
 - Searched Movies Page
 
-<br/>
+
 ### List of Features
 
 #### Global Navbar:
 
-- Users should be able to see a navbar at the top of every page.
-- Users should be able to see the title “movieDB” at the left side of the navbar.
-- Users should be able to view navigation buttons, including Popular, Top Rated, and Upcoming, in the navbar.
-- Users should be able to navigate to Popular (`/`), Top Rated (`/top-rated`), and Upcoming (`/upcoming`) Routes by clicking on the respective buttons.
-- Users should be able to see a search bar and a search button inside the navbar, where they can enter their search queries.
+- Users are able to see a navbar at the top of every page.
+- Users are able to see the title “movieDB” at the left side of the navbar.
+- Users are able to view navigation buttons, including Popular, Top Rated, and Upcoming, in the navbar.
+- Users are able to navigate to Popular (`/`), Top Rated (`/top-rated`), and Upcoming (`/upcoming`) Routes by clicking on the respective buttons.
+- Users are able to see a search bar and a search button inside the navbar, where they can enter their search queries.
 
 #### Popular Movies Page (Home Page):
 
-- Users should be able to view a grid of movie posters, arranged in multiple rows and columns, fetched from the **popular movies API**.
-- Each movie poster should include an image of the movie, its name, its rating, and a `View Details` button.
+- Users are able to view a grid of movie posters, arranged in multiple rows and columns, fetched from the **popular movies API**.
+- Each movie poster includes an image of the movie, its name, its rating, and a `View Details` button.
 
 #### Top Rated Movies Page:
 
-- Users should be able to view a grid of movie posters, arranged in multiple rows and columns, fetched from the **top rated movies API**.
-- Each movie poster should include an image of the movie, its name, its rating, and a `View Details` button.
+- Users are able to view a grid of movie posters, arranged in multiple rows and columns, fetched from the **top rated movies API**.
+- Each movie poster  includes an image of the movie, its name, its rating, and a `View Details` button.
 
 #### Upcoming Movies Page:
 
-- Users should be able to view a grid of movie posters, arranged in multiple rows and columns, fetched from the **upcoming movies API**.
-- Each movie poster should include an image of the movie, its name, its rating, and a `View Details` button.
+- Users are able to view a grid of movie posters, arranged in multiple rows and columns, fetched from the **upcoming movies API**.
+- Each movie poster  includes an image of the movie, its name, its rating, and a `View Details` button.
 
 #### Single Movie Details Page:
 
-- When users click on the `View Details` button of a specific movie poster on any movie page, it should open a new page displaying the details of the respective movie.
-- Users should be able to see two sections:
+- When users click on the `View Details` button of a specific movie poster on any movie page, it  opens a new page displaying the details of the respective movie.
+- Users are able to see two sections:
   - Movie details section
   - Cast details section
-- The movie details section should include the movie's name, image, ratings, duration, genre, release date, and an overview, all of which will be fetched from the **movie details API**.
-- The cast details section should display a grid of cast members, arranged in multiple rows and columns, retrieved from the **movie cast details API**.
-- Each cast member's details should include their image, their original name, and their character name in the movie.
+- The movie details section  includes the movie's name, image, ratings, duration, genre, release date, and an overview, all of which will be fetched from the **movie details API**.
+- The cast details section  displays a grid of cast members, arranged in multiple rows and columns, retrieved from the **movie cast details API**.
+- Each cast member's details  includes their image, their original name, and their character name in the movie.
 
 #### Searched Movies Page:
 
-- The searched movies page should only be displayed when a search is initiated.
-- Users should be able to view a grid of movie posters, arranged in multiple rows and columns, fetched from the **searched movies API**.
-- Each movie poster should include an image of the movie, its name, its rating, and a `View Details` button.
-
-### API Details:
-
-- You should generate your own `API_KEY` by visiting https://www.themoviedb.org/documentation/api
-
-- Follow the below reference to build an image URL [https://developer.themoviedb.org/docs/image-basics](https://developer.themoviedb.org/docs/image-basics)
+- The searched movies page is only displayed when a search is initiated.
+- Users are able to view a grid of movie posters, arranged in multiple rows and columns, fetched from the **searched movies API**.
+- Each movie poster includes an image of the movie, its name, its rating, and a `View Details` button.
 
 ### APIs
 
@@ -92,15 +88,6 @@ https://api.themoviedb.org/3/movie/${MOVIE_ID}/credits?api_key=${API_KEY}&langua
 https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=en-US&query=${MOVIE_NAME}&page=1
 ```
 
-<br/>
-**Note:** Make sure to replace `${API_KEY}`, `${MOVIE_ID}` and `${MOVIE_NAME}` with actual values when using these APIs.
-
-<br/>
-
-### Preview
-
-### [Link](https://movie-data-base-shaan.vercel.app/)
-
 ### Movie Home Page
 
 ### ![Link](https://res.cloudinary.com/dx8csuvrh/image/upload/v1704360780/Screenshot_381_ezp7dq.png)
@@ -108,3 +95,8 @@ https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=en-US&quer
 ### Movie Details View
 
 ### ![Link](https://res.cloudinary.com/dx8csuvrh/image/upload/v1704360780/Screenshot_382_ealvyn.png)
+
+
+### Preview
+
+### [Link](https://movie-data-base-shaan.vercel.app/)
